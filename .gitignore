@@ -1,0 +1,36 @@
+# Rust/Cargo
+target/
+**/*.rs.bk
+*.pdb
+
+# WASM build artifacts
+*.wasm
+*.opt.wasm
+!**/testdata/*.wasm
+
+# Test coverage
+*.profraw
+*.profdata
+test_snapshots/
+
+# Node/TypeScript
+node_modules/
+dist/
+.yarn/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.iws
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# Environment files (may contain secrets)
+.env*
+!.env.example

@@ -1,0 +1,29 @@
+[package]
+name = "fiat-token-admin"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["lib", "cdylib"]
+doctest = false
+
+[dependencies]
+common-roles = { workspace = true }
+simple-role-macros = { workspace = true }
+soroban-sdk = { workspace = true }
+stablecoin-interfaces = { workspace = true }
+stablecoin-roles = { workspace = true }
+stellar-access = "=0.5.0"
+stellar-contract-utils = "=0.5.0"
+stellar-macros = "=0.5.0"
+stellar-utils = { workspace = true }
+
+[dev-dependencies]
+common-roles = { workspace = true, features = ["testutils"] }
+event-assertion = { path = "../../packages/test-utils/event-assertion" }
+mock-minter = { path = "../../packages/test-contracts/mock-minter" }
+proptest = "1.5"
+soroban-sdk = { workspace = true, features = ["testutils"] }
+stablecoin-roles = { workspace = true, features = ["testutils"] }
+

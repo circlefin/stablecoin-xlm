@@ -1,0 +1,21 @@
+[package]
+name = "stellar-utils"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+doctest = false
+
+[features]
+default = []
+hazmat-address-utils = ["soroban-sdk/hazmat-address"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+mock-storage = { path = "../test-contracts/mock-storage" }
+proptest = "1.9"
+soroban-sdk = { workspace = true, features = ["testutils"] }
+

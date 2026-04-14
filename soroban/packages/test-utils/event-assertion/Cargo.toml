@@ -1,0 +1,12 @@
+[package]
+name = "event-assertion"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+doctest = false
+
+[target.'cfg(not(target_family = "wasm"))'.dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+

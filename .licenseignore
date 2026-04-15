@@ -1,0 +1,31 @@
+# Packages with compound licenses that are individually permissive
+# These use "X AND Y" license expressions where both X and Y are permissive licenses
+
+# ISC AND MIT
+pkg:npm/@npmcli/redact
+pkg:npm/abbrev
+
+# Apache-2.0 AND MIT
+pkg:npm/@pkgjs/parseargs
+
+# BSD-3-Clause AND ISC
+pkg:npm/bcrypt-pbkdf
+
+# CC0-1.0 AND MIT
+pkg:npm/lodash
+pkg:npm/lodash.camelcase
+
+# LicenseRef-scancode-dco-1.1 AND MIT
+pkg:npm/nan
+
+# BSD-3-Clause AND LicenseRef-scancode-protobuf
+pkg:npm/protobufjs
+
+# BSD-3-Clause AND MIT
+pkg:npm/sha.js
+
+# Cargo packages with incompatible or unresolvable licenses
+pkg:cargo/soroban-wasmi@0.31.1-soroban.20.0.1
+pkg:cargo/wasmparser@0.116.1
+pkg:cargo/wasmparser-nostd@0.100.2
+pkg:cargo/unicode-ident@1.0.24

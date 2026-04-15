@@ -1,0 +1,36 @@
+[workspace]
+resolver = "2"
+members = [
+    "contracts/fiat-token-admin",
+    "packages/common-roles",
+    "packages/simple-role",
+    "packages/simple-role-macros",
+    "packages/stablecoin-interfaces",
+    "packages/stablecoin-roles",
+    "packages/test-contracts/mock-minter",
+    "packages/test-utils/event-assertion",
+    "packages/utils",
+]
+
+[workspace.dependencies]
+common-roles = { path = "packages/common-roles" }
+simple-role = { path = "packages/simple-role" }
+simple-role-macros = { path = "packages/simple-role-macros" }
+soroban-sdk = "23.5.2"
+stablecoin-interfaces = { path = "packages/stablecoin-interfaces" }
+stablecoin-roles = { path = "packages/stablecoin-roles" }
+stellar-utils = { path = "packages/utils" }
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = 0
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[profile.release-with-logs]
+inherits = "release"
+debug-assertions = true

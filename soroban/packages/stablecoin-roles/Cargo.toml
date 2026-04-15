@@ -1,0 +1,23 @@
+[package]
+name = "stablecoin-roles"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+doctest = false
+
+[features]
+testutils = ["soroban-sdk/testutils", "dep:event-assertion"]
+
+[dependencies]
+common-roles = { workspace = true }
+event-assertion = { path = "../test-utils/event-assertion", optional = true }
+simple-role = { workspace = true }
+simple-role-macros = { workspace = true }
+soroban-sdk = { workspace = true }
+stellar-access = "=0.5.0"
+
+[dev-dependencies]
+common-roles = { workspace = true, features = ["testutils"] }
+soroban-sdk = { workspace = true, features = ["testutils"] }

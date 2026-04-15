@@ -1,0 +1,22 @@
+[package]
+name = "simple-role"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+doctest = false
+
+[features]
+testutils = ["soroban-sdk/testutils", "dep:event-assertion"]
+
+[dependencies]
+event-assertion = { path = "../test-utils/event-assertion", optional = true }
+soroban-sdk = { workspace = true }
+stellar-access = "=0.5.0"
+stellar-macros = "=0.5.0"
+
+[dev-dependencies]
+event-assertion = { path = "../test-utils/event-assertion" }
+soroban-sdk = { workspace = true, features = ["testutils"] }
+

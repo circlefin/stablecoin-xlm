@@ -1,0 +1,15 @@
+[package]
+name = "upgrade-v2-migratable"
+version = "1.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+doctest = false
+
+[dependencies]
+soroban-sdk = { workspace = true }
+stellar-contract-utils = "=0.5.0"
+stellar-macros = "=0.5.0"
+common-roles = { path = "../../../.." }

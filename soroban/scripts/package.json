@@ -1,0 +1,29 @@
+{
+  "name": "@circlefin/stellar-stablecoin-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for deploying and operating the FiatTokenAdmin Soroban contract",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "build:fiat-token-admin": "cd .. && cargo build --release --target wasm32v1-none -p fiat-token-admin",
+    "generate:bindings:fiat-token-admin": "stellar contract bindings typescript --wasm ../target/wasm32v1-none/release/fiat_token_admin.wasm --output-dir clients/fiat-token-admin --overwrite",
+    "setup:local-env": "npx tsx cli/setup/local-env.ts"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "9.9.0",
+    "@stellar/stellar-sdk": "14.5.0",
+    "@types/node": "24.12.0",
+    "neverthrow": "8.2.0",
+    "testcontainers": "11.13.0",
+    "tsx": "4.21.0",
+    "typescript": "5.9.3",
+    "zod": "4.3.6"
+  },
+  "packageManager": "yarn@4.9.1",
+  "resolutions": {
+    "lodash": "4.18.1",
+    "minimatch@^9.0.4": "9.0.9",
+    "minimatch@^5.1.0": "5.1.9",
+    "brace-expansion@^2.0.1": "2.0.3"
+  }
+}

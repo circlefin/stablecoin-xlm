@@ -1,0 +1,26 @@
+[package]
+name = "common-roles"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[lib]
+doctest = false
+
+[features]
+testutils = ["soroban-sdk/testutils", "dep:event-assertion"]
+
+[dependencies]
+event-assertion = { path = "../test-utils/event-assertion", optional = true }
+simple-role = { workspace = true }
+simple-role-macros = { workspace = true }
+soroban-sdk = { workspace = true, features = ["hazmat-crypto"] }
+stellar-access = "=0.5.0"
+stellar-contract-utils = "=0.5.0"
+stellar-macros = "=0.5.0"
+stellar-utils = { workspace = true }
+
+[dev-dependencies]
+event-assertion = { path = "../test-utils/event-assertion" }
+proptest = "1.9"
+soroban-sdk = { workspace = true, features = ["testutils", "hazmat-crypto"] }
